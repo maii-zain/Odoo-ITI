@@ -1,5 +1,13 @@
 <odoo>
     <data>
+        <!-- Custom QWeb template for adding CSS -->
+        <template id="view_hms_patient_form_custom" inherit_id="view_hms_patient_form">
+            <xpath expr="//form" position="inside">
+                <!-- Include the custom CSS -->
+                <link rel="stylesheet" type="text/css" href="/hms/static/src/css/patient_profile_styles.css"/>
+            </xpath>
+        </template>
+
         <!-- Action for patient views -->
         <record model="ir.ui.view" id="view_hms_patient_form">
             <field name="name">hms.patient.form</field>
@@ -7,23 +15,47 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form>
+                    <link rel="stylesheet" type="text/css" href="/web/static/src/css/website.assets_frontend.css"/>
                     <sheet>
                         <!-- Fields for the form view -->
-                        <group>
-                            <field name="name"/>
-                            <field name="last_name"/>
-                            <field name="birth_date"/>
-                            <field name="history"/>
-                            <field name="cr_ratio"/>
-                            <field name="blood_type"/>
-                            <field name="pcr"/>
-                            <field name="image"/>
-                            <field name="address"/>
-                            <field name="age"/>
-                            <field name="state"/>
-                            <field name="department_id"/>
-                            <field name="department_capacity" readonly="1"/>
-                            <field name="doctor_id"/>
+                        <group class="patient-profile"> <!-- Apply patient profile class -->
+                            <!-- Header -->
+                            <div class="header">
+                                <label class="o_form_label" for="dummy_field" string="Patient Profile"/>
+                            </div>
+
+                            <!-- Patient Details -->
+                            <div class="details">
+                                <!-- Field Labels -->
+                                <label class="o_form_label" for="name" string="First Name"/>
+                                <label class="o_form_label" for="last_name" string="Last Name"/>
+                                <label class="o_form_label" for="birth_date" string="Birth Date"/>
+                                <label class="o_form_label" for="history" string="History"/>
+                                <label class="o_form_label" for="cr_ratio" string="CR Ratio"/>
+                                <label class="o_form_label" for="blood_type" string="Blood Type"/>
+                                <label class="o_form_label" for="pcr" string="PCR"/>
+                                <label class="o_form_label" for="image" string="Image"/>
+                                <label class="o_form_label" for="address" string="Address"/>
+                                <label class="o_form_label" for="age" string="Age"/>
+                                <label class="o_form_label" for="state" string="State"/>
+                                <label class="o_form_label" for="department_id" string="Department"/>
+                                <label class="o_form_label" for="doctor_id" string="Doctor"/>
+
+                                <!-- Field Values -->
+                                <field name="name" class="field-value"/>
+                                <field name="last_name" class="field-value"/>
+                                <field name="birth_date" class="field-value"/>
+                                <field name="history" class="field-value"/>
+                                <field name="cr_ratio" class="field-value"/>
+                                <field name="blood_type" class="field-value"/>
+                                <field name="pcr" class="field-value"/>
+                                <field name="image" class="field-value"/>
+                                <field name="address" class="field-value"/>
+                                <field name="age" class="field-value"/>
+                                <field name="state" class="field-value"/>
+                                <field name="department_id" class="field-value"/>
+                                <field name="doctor_id" class="field-value"/>
+                            </div>
                         </group>
                     </sheet>
                     <!-- Add a new page to display log history -->
@@ -73,17 +105,7 @@
                     <!-- Include fields to display in the list view -->
                     <field name="name"/>
                     <field name="last_name"/>
-                    <field name="birth_date"/>
-                    <field name="history"/>
-                    <field name="cr_ratio"/>
-                    <field name="blood_type"/>
-                    <field name="pcr"/>
-                    <field name="image"/>
-                    <field name="address"/>
-                    <field name="age"/>
-                    <field name="state"/>
-                    <field name="department_id"/>
-                    <field name="doctor_id"/>
+                    <!-- Add other fields here -->
                 </tree>
             </field>
         </record>
