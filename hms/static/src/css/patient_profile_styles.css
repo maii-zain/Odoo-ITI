@@ -1,0 +1,23 @@
+.patient-profile {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.patient-profile .header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.patient-profile .details {
+    margin-top: 10px;
+}
+
+.patient-profile .details .field-label {
+    font-weight: bold;
+    color: #555555;
+}
+
+.patient-profile .details .field-value {
+    color: #777777;
+}

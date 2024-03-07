@@ -1,0 +1,5 @@
+<template id="view_hms_patient_form_custom" inherit_id="view_hms_patient_form">
+    <xpath expr="//link[last()]" position="after">
+        <link rel="stylesheet" type="text/css" href="/hms/static/src/css/patient_profile_styles.css"/>
+    </xpath>
+</template>
